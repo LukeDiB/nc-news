@@ -4,8 +4,7 @@ function App() {
 
   return (
     <>
-      l;kadf
-       
+       nc-news coming soon...
     </>
   )
 }
