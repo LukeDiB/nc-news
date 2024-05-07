@@ -14,6 +14,15 @@ function getArticlesById(id) {
     ).then((res) => {
         return res.data.article
     })
+
 }
 
-export { getArticles, getArticlesById };
+function getCommentsByArticleId(article_id){
+return axios.get(
+  `https://lukes-nc-news-database.onrender.com/api/articles/${article_id}/comments`
+).then((res) => {
+    return res.data
+})
+}
+
+export { getArticles, getArticlesById, getCommentsByArticleId };

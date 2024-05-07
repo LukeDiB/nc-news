@@ -4,6 +4,7 @@ function ArticleCard(props) {
 
   return (
     <div id="container">
+      {/* change to Link */}
       <a href={articleId}>
         <h3 id="title">{article.title}</h3>
       </a>
