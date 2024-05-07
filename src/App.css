@@ -21,9 +21,26 @@
   position: absolute;
   bottom: 8px;
   left: 16px;
+  color: azure;
 }
 
 .articles {
   display: grid;
   grid-template-columns: auto auto;
 }
+
+#body {
+  display: grid;
+  margin-top: 100px;
+  border-style: groove;
+  border-color: rgb(96, 96, 96);
+  padding: 70px;
+}
+
+#comment-section {
+  border-style: groove;
+  border-color: rgb(96, 96, 96);
+}
+
+
+
