@@ -4,8 +4,16 @@ function getArticles() {
   return axios
     .get("https://lukes-nc-news-database.onrender.com/api/articles")
     .then((res) => {
-      return res.data.articles
+      return res.data.articles;
     });
 }
 
-export { getArticles };
+function getArticlesById(id) {
+    return axios.get(
+      `https://lukes-nc-news-database.onrender.com/api/articles/${id}`
+    ).then((res) => {
+        return res.data.article
+    })
+}
+
+export { getArticles, getArticlesById };
