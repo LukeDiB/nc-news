@@ -14,6 +14,10 @@ function App() {
           element={<Home />}
         />
         <Route
+          path="/articles"
+          element={<Home />}
+        />
+        <Route
           path="/articles/:article_id"
           element={<SingleArticle />}
         />

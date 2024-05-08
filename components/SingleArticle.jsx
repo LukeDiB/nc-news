@@ -6,6 +6,7 @@ import {
   patchArticleVote,
 } from "../utils/api";
 import CommentCard from "./CommentCard";
+import PostComment from "./PostComment";
 
 function SingleArticle() {
   const { article_id } = useParams();
@@ -62,6 +63,7 @@ function SingleArticle() {
           v
         </button>
       </section>
+      <PostComment article_id={article_id}/>
       <section id="comment-section">
         <h6>Comments:</h6>
         <ul>
