@@ -63,7 +63,11 @@ function SingleArticle() {
           v
         </button>
       </section>
+<<<<<<< Updated upstream
       <PostComment article_id={article_id}/>
+=======
+     <PostComment/>
+>>>>>>> Stashed changes
       <section id="comment-section">
         <h6>Comments:</h6>
         <ul>
