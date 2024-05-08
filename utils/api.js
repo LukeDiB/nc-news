@@ -53,13 +53,25 @@ function postCommentToArticle(article_id, comment){
 
 }
 
+function postCommentToArticle(article_id, comment){
+  return axios.post(
+    `https://lukes-nc-news-database.onrender.com/api/articles/${article_id}`,
+    {comment}
+  )
+
+}
+
 export {
   getArticles,
   getArticlesById,
   getCommentsByArticleId,
   patchArticleVote,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   postCommentToArticle,
+=======
+  postComment
+>>>>>>> Stashed changes
 =======
   postComment
 >>>>>>> Stashed changes

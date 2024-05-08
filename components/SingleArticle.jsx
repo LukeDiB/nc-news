@@ -64,7 +64,11 @@ function SingleArticle() {
         </button>
       </section>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <PostComment article_id={article_id}/>
+=======
+     <PostComment/>
+>>>>>>> Stashed changes
 =======
      <PostComment/>
 >>>>>>> Stashed changes
