@@ -12,11 +12,17 @@ function SingleArticle() {
   const [article, setArticle] = useState({});
   const [comments, setComments] = useState([]);
   const [voteChange, setVoteChange] = useState(0);
+  const [err, setErr] = useState(null);
 
   function handleVote(vote) {
-    patchArticleVote(article_id, vote).catch(() => {
-      alert('vote not valid!')
-    })
+    setErr(null)
+    patchArticleVote(article_id, vote).then(() => {
+      setErr(null)
+    }).catch((err) => {
+      setVoteChange(0);
+      setErr("Something went wrong, please try again.");
+      console.log(err);
+    });
     setVoteChange(vote);
   }
 
@@ -29,13 +35,13 @@ function SingleArticle() {
     });
   }, [article_id]);
 
-
   return (
     <div>
       <section id="body">
         <h3 id="article-title">{article.title}</h3>
         <h5 id="article-author">Author: {article.author}</h5>
         <p id="article-body">{article.body}</p>
+        {err ? <p>{err}</p> : null}
         <button
           id="upvote"
           disabled={voteChange === 1}
@@ -68,4 +74,4 @@ function SingleArticle() {
   );
 }
 
-export default SingleArticle;
+export default  SingleArticle;
