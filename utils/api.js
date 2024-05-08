@@ -9,20 +9,37 @@ function getArticles() {
 }
 
 function getArticlesById(id) {
-    return axios.get(
-      `https://lukes-nc-news-database.onrender.com/api/articles/${id}`
-    ).then((res) => {
-        return res.data.article
+  return axios
+    .get(`https://lukes-nc-news-database.onrender.com/api/articles/${id}`)
+    .then((res) => {
+      return res.data.article;
+    });
+}
+
+function getCommentsByArticleId(article_id) {
+  return axios
+    .get(
+      `https://lukes-nc-news-database.onrender.com/api/articles/${article_id}/comments`
+    )
+    .then((res) => {
+      return res.data;
+    });
+}
+
+function patchArticleVote(article_id, vote) {
+  return axios
+    .patch(
+      `https://lukes-nc-news-database.onrender.com/api/articles/${article_id}`,
+      { inc_votes: vote }
+    )
+    .then((res) => {
+      return res
     })
-
 }
 
-function getCommentsByArticleId(article_id){
-return axios.get(
-  `https://lukes-nc-news-database.onrender.com/api/articles/${article_id}/comments`
-).then((res) => {
-    return res.data
-})
-}
-
-export { getArticles, getArticlesById, getCommentsByArticleId };
+export {
+  getArticles,
+  getArticlesById,
+  getCommentsByArticleId,
+  patchArticleVote,
+};
