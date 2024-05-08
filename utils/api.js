@@ -66,13 +66,5 @@ export {
   getArticlesById,
   getCommentsByArticleId,
   patchArticleVote,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   postCommentToArticle,
-=======
-  postComment
->>>>>>> Stashed changes
-=======
-  postComment
->>>>>>> Stashed changes
 };
