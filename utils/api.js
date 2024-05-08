@@ -32,9 +32,6 @@ function patchArticleVote(article_id, vote) {
       `https://lukes-nc-news-database.onrender.com/api/articles/${article_id}`,
       { inc_votes: vote }
     )
-    .then((res) => {
-      return res
-    })
 }
 
 export {
