@@ -1,19 +1,20 @@
+import { Link } from "react-router-dom";
+
 function ArticleCard(props) {
   const { article } = props;
   const articleId = `/articles/${article.article_id}`
 
   return (
     <div id="container">
-      {/* change to Link */}
-      <a href={articleId}>
+      <Link to={articleId} >
         <h3 id="title">{article.title}</h3>
-      </a>
-      <a href={articleId}>
+      </Link>
+      <Link to={articleId} >
         <img
           id="article-img"
           src={article.article_img_url}
         ></img>
-      </a>
+      </Link>
     </div>
   );
 }
