@@ -1,9 +1,9 @@
 import axios from "axios";
 
-function getArticles(topic) {
+function getArticles(topic, sortBy, order) {
   return axios
     .get("https://lukes-nc-news-database.onrender.com/api/articles", {
-      params: { topic: topic },
+      params: { topic: topic, sort_by: sortBy, order: order },
     })
     .then((res) => {
       return res.data.articles;
@@ -14,7 +14,6 @@ function getArticlesById(id) {
   return axios
     .get(`https://lukes-nc-news-database.onrender.com/api/articles/${id}`)
     .then((res) => {
-     
       return res.data.article;
     });
 }
@@ -37,28 +36,10 @@ function patchArticleVote(article_id, vote) {
 }
 
 function postCommentToArticle(article_id, comment) {
-  console.log(comment);
-  console.log(article_id);
   return axios.post(
     `https://lukes-nc-news-database.onrender.com/api/articles/${article_id}/comments`,
     comment
   );
-}
-
-function postCommentToArticle(article_id, comment){
-  return axios.post(
-    `https://lukes-nc-news-database.onrender.com/api/articles/${article_id}`,
-    {comment}
-  )
-
-}
-
-function postCommentToArticle(article_id, comment){
-  return axios.post(
-    `https://lukes-nc-news-database.onrender.com/api/articles/${article_id}`,
-    {comment}
-  )
-
 }
 
 export {
