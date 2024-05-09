@@ -7,13 +7,14 @@ function PostComment() {
   const [body, setBody] = useState("");
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(article_id);
-    postCommentToArticle(article_id, [
-      {
-        username: "cooljmessy",
-        body: body,
-      }
-    ]).then((res) => {
+    console.log(body, article_id);
+    postCommentToArticle(article_id, {
+      body: body,
+      article_id: article_id,
+      author: "grumpy19",
+      votes: 0,
+      created_at: "1995-12-17T03:24:00",
+    }).then((res) => {
       console.log(res);
     });
   }
