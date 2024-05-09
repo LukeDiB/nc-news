@@ -41,7 +41,7 @@ function SingleArticle() {
     getCommentsByArticleId(article_id).then((comments) => {
       setComments(comments)
     });
-  }, [article_id])
+  }, [article_id, comments])
 
   if (articleIdError) {
     return <ErrorPage message={articleIdError} />;

@@ -12,11 +12,10 @@ function PostComment() {
       body: body,
       article_id: article_id,
       author: "grumpy19",
-      votes: 0,
-      created_at: "1995-12-17T03:24:00",
-    }).then((res) => {
-      console.log(res);
-    });
+    }).then(() => {
+      setBody('')
+
+    })
   }
 
   return (
@@ -36,6 +35,7 @@ function PostComment() {
           onChange={(event) => {
             setBody(event.target.value);
           }}
+          required
         />
         <button
           type="submit"
