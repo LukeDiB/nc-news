@@ -63,6 +63,9 @@ function SingleArticle() {
           v
         </button>
       </section>
+      <section>
+        <PostComment/>
+      </section>
       <section id="comment-section">
         <h6>Comments:</h6>
         <ul>
