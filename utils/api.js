@@ -39,7 +39,9 @@ function postCommentToArticle(article_id, comment) {
   return axios.post(
     `https://lukes-nc-news-database.onrender.com/api/articles/${article_id}/comments`,
     comment
-  );
+  ).then((res) => {
+    console.log(res);
+  })
 }
 
 export {
