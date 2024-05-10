@@ -5,14 +5,15 @@ import { useParams } from "react-router-dom";
 function PostComment() {
   const { article_id } = useParams()
   const [body, setBody] = useState("");
+  const [commentPosted, setCommentPosted] = useState('')
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(body, article_id);
     postCommentToArticle(article_id, {
       body: body,
       article_id: article_id,
       author: "grumpy19",
     }).then(() => {
+      setCommentPosted('Comment posted!')
       setBody('')
 
     })
@@ -43,6 +44,7 @@ function PostComment() {
         >
           Post
         </button>
+        <p>{commentPosted}</p>
       </form>
     </section>
   );
