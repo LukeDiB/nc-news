@@ -118,3 +118,7 @@
 .dropdown:hover .dropbtn {
   background-color: #8e713e;
 }
+
+#invalid-user {
+  color: rgb(108, 9, 9);
+}
