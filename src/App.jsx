@@ -5,7 +5,9 @@ import Home from "../components/Home";
 import SingleArticle from '../components/SingleArticle'
 import ErrorPage from "../components/ErrorPage";
 
+
 function App() {
+  
   return (
     <>
       <Header />

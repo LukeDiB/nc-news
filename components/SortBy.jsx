@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 function SortBy(topic) {
-  console.log(topic);
   let sortByDate = "/articles?sort_by=created_at";
   let sortByCommentCount = "/articles?sort_by=comment_count";
   let sortByVotes = "/articles?sort_by=votes";
