@@ -27,7 +27,8 @@ function SingleArticle() {
         setVoteChange(0);
         setVoteErr("Something went wrong, please try again.");
       });
-    setVoteChange(vote);
+    setVoteChange((currVoteChange) => 
+      currVoteChange + vote);
   }
 
   useEffect(() => {
@@ -62,7 +63,7 @@ function SingleArticle() {
           >
             ^
           </button>
-          <p>{article.votes + voteChange}</p>
+          <p>{article.votes}</p>
           <button
             id="downvote"
             disabled={voteChange === -1}
@@ -80,7 +81,7 @@ function SingleArticle() {
           <h6>Comments:</h6>
           <ul>
             {comments.map((comment) => {
-              return <CommentCard comment={comment} />;
+              return <CommentCard key={comment.comment_id} comment={comment} />;
             })}
           </ul>
         </section>
